@@ -3,7 +3,7 @@
 ## 📘 Assignment 3: 
 Branching Strategies & Merge Conflicts
 
-# # ### 🛠️ Steps followed:
+# # ### Steps followed:
 
 1. **Initialized a GitHub repository with an HTML project.**
 ```bash
