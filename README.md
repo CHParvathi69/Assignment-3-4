@@ -1,178 +1,140 @@
-# Git Assignment 1 ----- ----- 2
+#### Git Assignment 3 ----- ----- 4
 
-# Assignment 1: 
-Basic Git Workflow
+## 📘 Assignment 3: 
+Branching Strategies & Merge Conflicts
 
----
+# # ### 🛠️ Steps followed:
 
-## Steps Followed:
-
-### 1. **Initializing Git Repository:**
-
-I initialized a local Git repository in the `GitAssignment1&2` folder using:
-
+1. **Initialized a GitHub repository with an HTML project.**
 ```bash
 git init
+echo "<!DOCTYPE html>
+<html>
+<head>
+ <title> Merge Conflict </title>
+</head>
+<body>
+ <h1>Hello Minfy</h1>
+ <p>Welcome to Hyderabad</p>
+</body>
+</html>" > Basic.html
+git add.
+git commit -m "Basic HTML"
+git remote add origin https://github.com/CHParvathi69/Assignment-3-4.git
+git branch -M main
+git push -u origin main
 ```
 
-This created a `.git` folder to track all changes.
-
-### 2. **Creating the File: `Amazon.txt`:**
-
-I created `Amazon.txt` and added the Poem:
-
-```txt
-In emerald hush, where wild vines weave,
-The jungle breathes beneath each leaf.
-A symphony born from parrot cries,
-With golden frogs and velvet skies.
-
-The rivers curl like whispered spells,
-Through roots and dreams where magic dwells.
-A sunbeam dances on the panther's fur,
-While orchids bloom where breezes purr.
-
-The Amazon sings secrets of old
-A tale of life in green and gold.
-
-```
-
-### 3. **Making the Initial Commit:**
-
-The initial commit was done using the following:
-
+2. **Created two feature branches from `main`:**
+   - `short-hyd`: Modified the paragraph.
+   - `add-sec`: Added new info to the same paragraph line.
 ```bash
-git add Amazon.txt
-git commit -m "Initial Commit: Amazon rainforest poem"
+git checkout -b short-hyd
+# (Make edits to Basic.html)
+git add.
+git commit -m "changed to short-hyd"
+git push origin short-hyd
+
+git checkout main
+git checkout -b add-sec
+# (Make edits to Basic.html)
+git add.
+git commit -m "Added secunderabad"
+Git push origin add-sec
 ```
 
-### 4. **Making Changes with Commits:**
+3. **Both branches changed the same line in `Basic.html` (`<p>` tag), resulting in a conflict.**
+   - In `short-hyd`, the paragraph : `<p>Welcome to Hyd</p>`
+   - In `add-sec`, the paragraph: `<p>Welcome to Hyderabad-Secunderabad</p>`
 
-#### **Commit 1: updated imagery**
-updated imagery for frogs and skies:
+4. **Merged one branch successfully.**
+   - Merged the `short-hyd` branch.
 
-```txt
-With sapphire frogs and twilight skies.
+5. Got a merge conflict while merging the second branch.**
+   - GitHub raised the merge conflict in `Basic.html`.
+
+6. **Manually resolved the conflict by combining changes.**
+```html
+# Inside Basic.html after conflict markers
+<<<<<<< HEAD
+<p>Welcome to Hyd</p>
+=======
+<p>Welcome to Hyderabad-Secunderabad</p>
+>>>>>>> add-sec
+
+# Final resolution:
+<p>Welcome to Hyderabd</p>
 ```
 
-Commit message:
-
+7. **Finalized the merge with both updates preserved.**
 ```bash
-git commit -m "Commit 1: update imagery for frogs and skies"
+git add Basic.html
+git commit -m "Resolved merge conflict in Basic.html"
+git push origin main
 ```
 
-#### **Commit 2: changed 'panther' to 'jaguar'**
-Changed 'panther' to 'jaguar' for regional accuracy:
+### 📷 Screenshots
 
-```txt
-A sunbeam dances on the panther's fur,
+- Pull Request showing a merge conflict.
+![Compare Changes]()
+![Merge Conflict ]()
 
-```
+- Conflict resolution in progress.
+![Resolved]()
+![No Conflicts]()
+- Final version after the merge.
+![Merged]()
+### 🔗 Repository Link
 
-To:
-
-```txt
-A sunbeam dances on the jaguar's fur,
-
-```
-
-Commit message:
-
-```bash
-git commit -m "Commit 2: changed 'panther' to 'jaguar'"
-```
-
-#### **Commit 3: Added closing line**
-Added closing line to enhance the poem:
-
-```txt
-Nature's breath is forever free.
-```
-
-Commit message:
-
-```bash
-git commit -m "Commit 3: added closing line to the poem"
-
-```
-### 5. **Git Log:**
-
-Used the command to view commit history:
-
-```bash
-git log --oneline
-```
-![Git Log Screenshot](https://github.com/CHParvathi69/Assignment-1-2/blob/main/Git-log.PNG)
-
+`https://github.com/CHParvathi69/Assignment-3-4.git`
 
 ---
 
-### 6. **Git Diff:**
+# # ### 🧾 Final HTML Code
 
-To compare changes:
-
-**Last Two Commits:**
-
-```bash
-git diff HEAD^ HEAD
-```
-
-**First and Third Commits:**
-
-```bash
-git diff HEAD~3 HEAD
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Merge Conflict Demo</title>
+</head>
+<body>
+  <h1>Hello Minfy</h1>
+  <p>Welcome to Hyderabad</p>
+</body>
+</html>
 ```
 
 ---
 
-## Files Used:
-
-- `Amazon.txt`: The Amazon file with changes.
-- `Git-log.png`: Screenshot of the Git log output.
 
 
+# Assignment 4: Git Hooks & Automation
 
-## Assignment 2: GitHub Basics & Collaboration
+## Objective
 
-### 1. Cloning the Repository:
-I cloned the existing repository to my local system:
+This assignment helped me understand how automation can be integrated into the Git workflow to maintain code quality and consistency. It introduced tools like Husky, lint-staged, commitlint, and GitHub Actions, which are commonly used in real-world development setups.
 
-```bash
-git clone https://github.com/CHParvathi69/Assignment-1-2.git
-cd assignment-1-2
-```
 
-### 2. Creating a New Branch:
-Created a new branch `feature` for adding the update to the `README.md` file.
+### 🔹 Git Hooks & Husky
+I learned that **Git hooks** are scripts that run automatically at different points in the Git lifecycle (like before committing or pushing code). **Husky** is a tool that makes it easier to manage these hooks directly from the project.
 
-```bash
-git checkout -b feature
-```
+### 🔹 Linting & Formatting
+Tools like **ESLint** (for JavaScript) help catch coding errors and enforce code standards. **Prettier** is used for consistent formatting. I learned that using these tools before committing code can prevent issues from reaching the main codebase.
 
-### 3. Editing the `README.md` File:
-I updated the `README.md` to include both **Assignment 1** and **Assignment 2** as described here.
+### 🔹 lint-staged
+**lint-staged** allows running linters only on files that are staged for commit. This saves time and makes pre-commit checks more efficient.
 
-### 4. Staging, Committing, and Pushing the Changes:
-Staged and committed the changes to the `README.md` file:
+# # ### 🔹 Commit Message Validation
+I explored **commitlint**, which ensures that commit messages follow a specific format (like the conventional commit style). This makes commit history easier to read and automate in CI/CD pipelines.
 
-```bash
-git add README.md
-git commit -m "Updated README to include both Assignment 1 & 2 details"
-git push -u origin feature
-```
+# # ### 🔹 GitHub Actions
+**GitHub Actions** enables automation on GitHub. I learned how it can be used to run tests, linters, or any script automatically when code is pushed to a repository or a pull request is created.
 
-### 5. Creating a Pull Request on GitHub:
-Created a pull request on GitHub to merge the changes from the `feature` branch to the `main` branch.
+## Thoughts on Automation
 
-### 6. Merging the Pull Request:
-After reviewing the pull request, I merged it to the `main` branch.
-
----
-
-### Deliverables:
-
-- **GitHub Repository Link**: [GitHub Repo - Assignment 1 & 2](https://github.com/CHParvathi69/Assignment-1-2.git)
-
-![Pull Request Screeshot](https://github.com/CHParvathi69/Assignment-1-2/blob/main/pullreq.PNG)
-
-![Merge Screenshot](https://github.com/CHParvathi69/Assignment-1-2/blob/main/merge.PNG)
+Automation brings a lot of benefits, especially in team projects:
+- It helps catch mistakes early.
+- Enforces coding standards consistently.
+- Saves time by reducing manual checks.
+- Makes collaboration smoother by improving code quality.
