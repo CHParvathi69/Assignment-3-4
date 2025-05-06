@@ -1,9 +1,9 @@
 #### Git Assignment 3 ----- ----- 4
 
-## 📘 Assignment 3: 
+## Assignment 3: 
 Branching Strategies & Merge Conflicts
 
-# # ### Steps followed:
+### Steps followed:
 
 1. **Initialized a GitHub repository with an HTML project.**
 ```bash
@@ -30,7 +30,7 @@ git push -u origin main
    - `add-sec`: Added new info to the same paragraph line.
 ```bash
 git checkout -b short-hyd
-# (Make edits to Basic.html)
+## (Make edits to Basic.html)
 git add.
 git commit -m "changed to short-hyd"
 git push origin short-hyd
@@ -73,7 +73,7 @@ git commit -m "Resolved merge conflict in Basic.html"
 git push origin main
 ```
 
-### 📷 Screenshots
+### Screenshots
 
 - Pull Request showing a merge conflict.
 ![Compare Changes](https://github.com/CHParvathi69/Assignment-3-4/blob/main/CompareChanges.PNG)
@@ -84,13 +84,13 @@ git push origin main
 ![No Conflicts](https://github.com/CHParvathi69/Assignment-3-4/blob/main/NoConflicts.PNG)
 - Final version after the merge.
 ![Merged](https://github.com/CHParvathi69/Assignment-3-4/blob/main/Merged.PNG)
-### 🔗 Repository Link
+### Repository Link
 
 `https://github.com/CHParvathi69/Assignment-3-4.git`
 
 ---
 
-# # ### 🧾 Final HTML Code
+### Final HTML Code
 
 ```html
 <!DOCTYPE html>
@@ -116,19 +116,19 @@ git push origin main
 This assignment helped me understand how automation can be integrated into the Git workflow to maintain code quality and consistency. It introduced tools like Husky, lint-staged, commitlint, and GitHub Actions, which are commonly used in real-world development setups.
 
 
-### 🔹 Git Hooks & Husky
+### Git Hooks & Husky
 I learned that **Git hooks** are scripts that run automatically at different points in the Git lifecycle (like before committing or pushing code). **Husky** is a tool that makes it easier to manage these hooks directly from the project.
 
-### 🔹 Linting & Formatting
+### Linting & Formatting
 Tools like **ESLint** (for JavaScript) help catch coding errors and enforce code standards. **Prettier** is used for consistent formatting. I learned that using these tools before committing code can prevent issues from reaching the main codebase.
 
 ### 🔹 lint-staged
 **lint-staged** allows running linters only on files that are staged for commit. This saves time and makes pre-commit checks more efficient.
 
-# # ### 🔹 Commit Message Validation
+### Commit Message Validation
 I explored **commitlint**, which ensures that commit messages follow a specific format (like the conventional commit style). This makes commit history easier to read and automate in CI/CD pipelines.
 
-# # ### 🔹 GitHub Actions
+### GitHub Actions
 **GitHub Actions** enables automation on GitHub. I learned how it can be used to run tests, linters, or any script automatically when code is pushed to a repository or a pull request is created.
 
 ## Thoughts on Automation
