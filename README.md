@@ -76,14 +76,14 @@ git push origin main
 ### 📷 Screenshots
 
 - Pull Request showing a merge conflict.
-![Compare Changes]()
-![Merge Conflict ]()
+![Compare Changes](https://github.com/CHParvathi69/Assignment-3-4/blob/main/CompareChanges.PNG)
+![Merge Conflict ](https://github.com/CHParvathi69/Assignment-3-4/blob/main/MergeConflict.PNG)
 
 - Conflict resolution in progress.
-![Resolved]()
-![No Conflicts]()
+![Resolved](https://github.com/CHParvathi69/Assignment-3-4/blob/main/Resolved.PNG)
+![No Conflicts](https://github.com/CHParvathi69/Assignment-3-4/blob/main/NoConflicts.PNG)
 - Final version after the merge.
-![Merged]()
+![Merged](https://github.com/CHParvathi69/Assignment-3-4/blob/main/Merged.PNG)
 ### 🔗 Repository Link
 
 `https://github.com/CHParvathi69/Assignment-3-4.git`
