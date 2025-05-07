@@ -122,7 +122,7 @@ I learned that **Git hooks** are scripts that run automatically at different poi
 ### Linting & Formatting
 Tools like **ESLint** (for JavaScript) help catch coding errors and enforce code standards. **Prettier** is used for consistent formatting. I learned that using these tools before committing code can prevent issues from reaching the main codebase.
 
-### 🔹 lint-staged
+### lint-staged
 **lint-staged** allows running linters only on files that are staged for commit. This saves time and makes pre-commit checks more efficient.
 
 ### Commit Message Validation
